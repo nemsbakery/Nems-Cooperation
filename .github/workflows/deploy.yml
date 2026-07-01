@@ -2,20 +2,16 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: 'main'
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -24,29 +20,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build Project
+      - name: Build website
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Build Artifacts
+      - name: Upload production build
         uses: actions/upload-pages-artifact@v3
         with:
-          # Point exactly to the output folder of Vite build
-          path: './dist'
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
