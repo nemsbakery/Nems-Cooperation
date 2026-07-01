@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Premium Light-Mode Corporate Color Scheme */
+  --color-brand-dark: #0B132B;      /* Deep, solid Dark Blue (Primary headings, dark text) */
+  --color-brand-navy: #1E293B;      /* Dark slate blue for high visual hierarchy text */
+  --color-brand-secondary: #475569; /* Muted slate for clean body prose */
+  --color-brand-accent: #0284C7;    /* Vibrant electric blue accent color (Active states, links) */
+  --color-brand-accent-light: #F0F9FF; /* Very soft light blue background tint for badges */
+  --color-brand-border: #E2E8F0;    /* Crisp, clean, thin divider lines */
+  --color-brand-bg-soft: #F8FAFC;   /* Faint off-white background tint for cards */
+}
+
+/* Custom scrollbars matching the pristine light theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #1E293B;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Nems Corporation",
+  "description": "Premium corporate website for Nems Corporation, engineering high-concurrency enterprise infrastructure, serverless solutions, geospatial mapping, and passive hardware systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
